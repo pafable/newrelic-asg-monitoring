@@ -32,7 +32,7 @@ This environment will create the following:
 
 a. Initialize terraform
 ```
-terraform init -backend-config "bucket=tfstates-cis-central" -backend-config "region=us-east-2" -backend-config "key=newrelic-poc/terraform.state" -backend-config "encrypt=true"
+terraform init -backend-config "bucket=<S3_BUCKET_NAME>" -backend-config "region=<AWS_REGION>" -backend-config "key=<PROJECT_NAME>/terraform.state" -backend-config "encrypt=true"
 ```
 
 b. Build terraform plan
