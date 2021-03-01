@@ -51,9 +51,22 @@ module "nr_poc3" {
   workspace_iam_roles = var.workspace_iam_roles
 }
 
-module "nr_dash" {
-  source = ".modules/newrelic-dashboard"
+module "nr_dash1" {
+  source  = ".modules/newrelic-dashboard"
   project = "${var.project} dashboard (US-EAST-2)"
+  nrql1   = var.nrql1
+  nrql2   = var.nrql2
+  nrql3   = var.nrql3
+  nrql4   = var.nrql4
+  nrql5   = var.nrql5
+  nrql6   = var.nrql6
+  nrql7   = var.nrql7
+  nrql8   = var.nrql8
+}
+
+module "nr_dash2" {
+  source  = ".modules/newrelic-dashboard"
+  project = "${var.project} dashboard (US-WEST-2)"
   nrql1   = var.nrql1
   nrql2   = var.nrql2
   nrql3   = var.nrql3
