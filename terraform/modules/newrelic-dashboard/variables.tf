@@ -1,0 +1,9 @@
+variable "project" {}
+variable "nrql1" {}
+variable "nrql2" {}
+variable "nrql3" {}
+variable "nrql4" {}
+variable "nrql5" {}
+variable "nrql6" {}
+variable "nrql7" {}
+variable "nrql8" {}

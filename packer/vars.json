@@ -1,0 +1,4 @@
+{
+    "ami-name": "new-relic-poc",
+    "aws-region": "us-east-2"
+}

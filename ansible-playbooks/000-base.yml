@@ -1,0 +1,60 @@
+---
+- name: Configuring EC2
+  hosts: localhost
+  connection: local
+  become: true
+  tasks: 
+   - name: Upgrading packages
+     yum:
+       name: "*"
+       state: latest
+  
+   - name: Installing net-tools
+     yum:
+       name: net-tools
+       state: latest
+       update_cache: yes  
+
+   - name: Installing vim
+     yum:
+       name: vim
+       state: latest
+       update_cache: yes  
+
+   - name: Installing tmux
+     yum:
+       name: tmux
+       state: latest
+       update_cache: yes  
+
+   - name: Installing wget
+     yum:
+       name: wget
+       state: latest
+       update_cache: yes  
+
+# Installs New Relic Agent on Amazon Linux 2
+   - name: Creating New Relic configuration file
+     ansible.builtin.shell:
+        cmd: > 
+          echo "license_key: <YOUR LICENSE ID>" | sudo tee -a /etc/newrelic-infra.yml
+  
+   - name: Creating New Relic agent yum repo
+     ansible.builtin.shell:
+        cmd: curl -o /etc/yum.repos.d/newrelic-infra.repo https://download.newrelic.com/infrastructure_agent/linux/yum/el/7/x86_64/newrelic-infra.repo
+
+   - name: Update yum cache 
+     ansible.builtin.shell:
+        cmd: yum -q makecache -y --disablerepo='*' --enablerepo='newrelic-infra' 
+
+   - name: Installing New Relic Agent
+     yum:
+       name: newrelic-infra
+       state: latest
+       update_cache: yes  
+  
+   - name: Start New Relic Agent
+     service: 
+        name: newrelic-infra
+        state: started
+        enabled: yes
