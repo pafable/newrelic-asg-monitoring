@@ -53,7 +53,7 @@ module "nr_poc3" {
 
 module "nr_dash1" {
   source  = ".modules/newrelic-dashboard"
-  project = "${var.project} dashboard (US-EAST-2)"
+  project = "${var.project} dashboard (APP 1)"
   nrql1   = var.nrql1
   nrql2   = var.nrql2
   nrql3   = var.nrql3
@@ -66,7 +66,7 @@ module "nr_dash1" {
 
 module "nr_dash2" {
   source  = ".modules/newrelic-dashboard"
-  project = "${var.project} dashboard (US-WEST-2)"
+  project = "${var.project} dashboard (APP 2)"
   nrql1   = var.nrql1
   nrql2   = var.nrql2
   nrql3   = var.nrql3
