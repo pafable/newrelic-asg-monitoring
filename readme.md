@@ -1,4 +1,4 @@
-# New Relic POC Environment
+# Automated New Relic Dashboard Creation
 
 Please have the latest versions of following tools installed on your local workstation:
 - [Packer](https://www.packer.io/downloads) 
