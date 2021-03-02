@@ -1,2 +1,6 @@
 .terraform*
 plan
+mypythonvenv
+venv
+__pycache__
+*.db
