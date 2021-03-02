@@ -1,4 +1,5 @@
 # Automated New Relic Dashboard Creation
+This project will create an AWS Autoscaling group and a New Relic dashboard.
 
 Please have the latest versions of following tools installed on your local workstation:
 - [Packer](https://www.packer.io/downloads) 
