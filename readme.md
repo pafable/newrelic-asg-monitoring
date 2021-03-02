@@ -8,7 +8,7 @@ Please have the latest versions of following tools installed on your local works
 
 ## 1. Build AMI with Packer and Ansible
 
-If you wish to use a different New Relic account, change the license key (*line 40*) in `000-base.yml` within the ansible-playbooks directory with another license.
+If you wish to use a different New Relic account, change the license key in `nr_license_var.yml` within the ansible-playbooks directory with another license.
 
 Ansible-playbook (`000-base.yml`) will be executed as part of the AMI creation.
 

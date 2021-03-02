@@ -3,6 +3,9 @@
   hosts: localhost
   connection: local
   become: true
+  vars_files:
+    - nr_license_var.yml 
+    
   tasks: 
    - name: Upgrading packages
      yum:
@@ -37,7 +40,7 @@
    - name: Creating New Relic configuration file
      ansible.builtin.shell:
         cmd: > 
-          echo "license_key: <YOUR LICENSE ID>" | sudo tee -a /etc/newrelic-infra.yml
+          echo "license_key: {{ nr_license_id }}" | sudo tee -a /etc/newrelic-infra.yml
   
    - name: Creating New Relic agent yum repo
      ansible.builtin.shell:
