@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    aws = {
+    newrelic = {
       source  = "newrelic/newrelic"
       version = "~> 2.19"
     }

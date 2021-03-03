@@ -34,6 +34,12 @@
      yum:
        name: wget
        state: latest
+       update_cache: yes
+
+   - name: Installing python 3
+     yum:
+       name: python3
+       state: latest
        update_cache: yes  
 
 # Installs New Relic Agent on Amazon Linux 2
